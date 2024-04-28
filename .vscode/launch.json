@@ -1,0 +1,17 @@
+{
+    "configurations": [
+        {
+            "name": "C#: Asynchronous",
+            "type": "dotnet",
+            "request": "launch",
+            "projectPath": "${workspaceFolder}\\src\\CSharpFundamental\\Asynchronous\\Asynchronous.csproj"
+        },
+        {
+            "name": "C#: PrintListUser",
+            "type": "dotnet",
+            "request": "launch",
+            "projectPath": "${workspaceFolder}\\src\\CSharpFundamental\\PrintListUser\\PrintListUser.csproj",
+            "launchConfigurationId": "TargetFramework=;PrintListUser"
+        }
+    ]
+}
