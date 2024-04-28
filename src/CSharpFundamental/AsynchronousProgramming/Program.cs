@@ -1,5 +1,5 @@
-﻿using Asynchronous.CookingService;
-using Asynchronous.CookingService.CookingAsyncServices;
+﻿using AsynchronousProgramming.CookingService;
+using AsynchronousProgramming.CookingService.CookingAsyncServices;
 using SystemTimer = System.Timers;
 
 namespace Asynchronous;

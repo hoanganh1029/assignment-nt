@@ -1,4 +1,4 @@
-﻿namespace Asynchronous.Models
+﻿namespace AsynchronousProgramming.Models
 {
     public class RauSach
     {

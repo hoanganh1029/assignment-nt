@@ -1,4 +1,4 @@
-﻿namespace Asynchronous.CookingService
+﻿namespace AsynchronousProgramming.CookingService
 {
     internal abstract class CookingBase
     {

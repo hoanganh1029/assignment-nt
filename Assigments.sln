@@ -7,7 +7,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CSharpFundamental", "CSharp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PrintListUser", "src\CSharpFundamental\PrintListUser\PrintListUser.csproj", "{B00D8603-DBE4-4272-ACA9-8A6A242A8A37}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Asynchronous", "src\CSharpFundamental\Asynchronous\Asynchronous.csproj", "{F7AE0553-A7B5-472B-B2B1-EFCCF1548266}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AsynchronousProgramming", "src\CSharpFundamental\AsynchronousProgramming\AsynchronousProgramming.csproj", "{F7AE0553-A7B5-472B-B2B1-EFCCF1548266}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MVC", "MVC", "{E0843B76-9CFE-4DA6-84F0-E968F1DF8551}"
 EndProject

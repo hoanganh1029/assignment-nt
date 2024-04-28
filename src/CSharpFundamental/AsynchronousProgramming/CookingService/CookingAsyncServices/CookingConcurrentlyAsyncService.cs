@@ -1,4 +1,4 @@
-﻿namespace Asynchronous.CookingService.CookingAsyncServices
+﻿namespace AsynchronousProgramming.CookingService.CookingAsyncServices
 {
     internal class CookingConcurrentlyAsyncService : CookingAsyncServiceBase
     {

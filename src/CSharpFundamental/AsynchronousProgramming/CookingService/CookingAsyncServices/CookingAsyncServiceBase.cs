@@ -1,8 +1,8 @@
-﻿using Asynchronous.Constants;
-using Asynchronous.Models;
+﻿using AsynchronousProgramming.Constants;
+using AsynchronousProgramming.Models;
 using System.Diagnostics;
 
-namespace Asynchronous.CookingService.CookingAsyncServices
+namespace AsynchronousProgramming.CookingService.CookingAsyncServices
 {
     internal class CookingAsyncServiceBase : CookingBase
     {

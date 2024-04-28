@@ -1,4 +1,4 @@
-﻿namespace Asynchronous.Constants
+﻿namespace AsynchronousProgramming.Constants
 {
     internal class CookingTime
     {
