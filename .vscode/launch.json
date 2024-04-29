@@ -1,10 +1,10 @@
 {
     "configurations": [
         {
-            "name": "C#: Asynchronous",
+            "name": "C#: AsynchronousProgramming",
             "type": "dotnet",
             "request": "launch",
-            "projectPath": "${workspaceFolder}\\src\\CSharpFundamental\\Asynchronous\\Asynchronous.csproj"
+            "projectPath": "${workspaceFolder}\\src\\CSharpFundamental\\AsynchronousProgramming\\AsynchronousProgramming.csproj"
         },
         {
             "name": "C#: PrintListUser",

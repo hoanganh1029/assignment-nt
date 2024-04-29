@@ -8,6 +8,8 @@ namespace AsynchronousProgramming.CookingService.CookingAsyncServices
     {
         public async Task CookAsync()
         {
+            ShowThreadInformation();
+
             var sw = new Stopwatch();
 
             sw.Start();

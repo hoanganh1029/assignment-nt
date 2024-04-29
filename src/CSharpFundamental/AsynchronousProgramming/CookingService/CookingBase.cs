@@ -12,13 +12,13 @@
         }
 
         private static readonly Object lockObj = new();
-        private static void ShowThreadInformation(string taskName)
+        protected void ShowThreadInformation()
         {
             var msg = string.Empty;
             Thread thread = Thread.CurrentThread;
             lock (lockObj)
             {
-                msg = String.Format("{0} thread information\n", taskName) +
+                msg = String.Format("{0} thread information\n", CookingType) +
                       String.Format("   Background: {0}\n", thread.IsBackground) +
                       String.Format("   Thread Pool: {0}\n", thread.IsThreadPoolThread) +
                       String.Format("   Thread ID: {0}\n", thread.ManagedThreadId);

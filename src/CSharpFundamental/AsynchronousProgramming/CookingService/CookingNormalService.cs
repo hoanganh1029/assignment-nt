@@ -13,6 +13,8 @@ namespace AsynchronousProgramming.CookingService
 
         public void CookNormal()
         {
+            ShowThreadInformation();
+
             var sw = new Stopwatch();
             sw.Start();
 
