@@ -2,11 +2,12 @@
 
 namespace ListPrimeNumbers;
 class Program
-{       
+{
     static async Task Main(string[] args)
     {
         int startNumber = 0;
         int batchSize = 10;
+        bool isDisplayPrimeResult = false;
 
         while (true)
         {
@@ -24,24 +25,29 @@ class Program
                 continue;
             }
 
-            var sw = new Stopwatch();            
-            
+            Console.Write("Display list prime number result (y/n): ");
+            var input = Console.ReadLine();
+            isDisplayPrimeResult = (input ?? string.Empty).Equals("y", StringComparison.OrdinalIgnoreCase);
+
+            var sw = new Stopwatch();
+
             //Async
             sw.Start();
-            List<Task<List<int>>> tasks = new();
+            List<Task<IEnumerable<int>>> tasks = new();
             for (int i = startNumber; i <= endNumber; i += batchSize)
             {
-                int chunkEnd = Math.Min(i + batchSize - 1, endNumber);
-                tasks.Add(PrimeService.GetPrimesAsync(i, chunkEnd));
+                int batchEnd = Math.Min(i + batchSize - 1, endNumber);
+                Console.WriteLine($"Batch info: begin {i}, end {batchEnd}");
+                tasks.Add(PrimeService.GetPrimesAsync(i, batchEnd));
             }
-            
+
             var primeLists = await Task.WhenAll(tasks);
 
             sw.Stop();
-            
+
             var asyncPrimes = primeLists.SelectMany(p => p);
- 
-            Console.WriteLine($"[Async] {asyncPrimes.Count()} Prime numbers between {startNumber} and {endNumber} in {sw.Elapsed.TotalMilliseconds}: {string.Join(", ", asyncPrimes)}");
+            var strListPrime = isDisplayPrimeResult ? string.Join(", ", asyncPrimes) : string.Empty;
+            Console.WriteLine($"\n[Async] {asyncPrimes.Count()} prime numbers between {startNumber} and {endNumber} in {sw.Elapsed.TotalMilliseconds}ms \n {strListPrime}");
 
             //Sync
             sw.Restart();
@@ -52,9 +58,10 @@ class Program
                 syncPrimes.AddRange(PrimeService.GetPrimes(i, chunkEnd));
             }
             // Output the prime numbers
-            Console.WriteLine($"[Sync] {syncPrimes.Count} Prime numbers between {startNumber} and {endNumber} in {sw.Elapsed.TotalMilliseconds}: {string.Join(", ", syncPrimes)}");
+            strListPrime = isDisplayPrimeResult ? string.Join(", ", syncPrimes) : string.Empty;
+            Console.WriteLine($"[Sync] {syncPrimes.Count} prime numbers between {startNumber} and {endNumber} in {sw.Elapsed.TotalMilliseconds}ms \n {strListPrime}");
 
-
+            Console.WriteLine("====END====");
         }
     }
 }

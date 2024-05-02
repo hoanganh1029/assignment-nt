@@ -2,15 +2,18 @@
 {
     internal static class PrimeService
     {
-        public static async Task<List<int>> GetPrimesAsync(int start, int end)
-        {
-            List<int> primes = new();
-            for (int i = start; i <= end; i++)
+        public static async Task<IEnumerable<int>> GetPrimesAsync(int start, int end)
+        {            
+            return await Task.Run(() =>
             {
-                if (IsPrime(i))
-                    primes.Add(i);
-            }
-            return await Task.FromResult(primes);
+                var primes = new List<int>();
+                for (int i = start; i <= end; i++)
+                {
+                    if (IsPrime(i))
+                        primes.Add(i);
+                }
+                return primes;
+            });
         }
 
         public static IEnumerable<int> GetPrimes(int start, int end)
